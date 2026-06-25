@@ -1,20 +1,20 @@
-﻿# CURRENT TASK - GateKeeper ERP
+# CURRENT TASK - GateKeeper ERP
 
-**Cap nhat:** 25/06/2026 07:35
+**Cap nhat:** 25/06/2026 12:45
 **Branch:** main
 **Repo:** github.com/vudinhducdai/erp
 
 ## Da hoan thanh (session nay)
-- feat(audit): Enterprise audit log — risk scoring, traceId, actor snapshot, diff, SSE, CSV export, integrity verify
-- fix(security): Mask SMTP pass/token trong GET /api/settings; admin-only cho key nhay cam
-- fix(security): Settings cache thundering herd — refreshPromise pattern
-- fix(security): authOptional gio check blacklist + force-logout
-- fix(ui): Search icon SVG sau input trong DOM (settings, departments pages)
+- fix(#24): employeeCode CSPRNG — crypto.randomBytes instead of Math.random()
+- fix(#19): createEmployee race condition — wrap in transaction
+- fix(#21): updateEmployee identityNumber clear — properly clear hash
+- fix(#22): updateProfile CCCD duplicate check — validate before update
+- fix(#20): managedDepartmentIds empty — recursive department query
+- fix(#18): avatarPath traversal — validate path
+- fix(#23): listEndpoints hardcoded — /api/system/list-endpoints API
 
 ## Commit gan nhat
-- `59cfc42` fix(security): mask sensitive settings, admin-only keys, settings cache
-- `1a7ec42` feat(audit): enterprise-grade audit log system (9 files, +803 lines)
-- `f1ce345` fix(ui): search icon DOM order fix
+- `513575a` fix: resolve 7 security & data consistency issues
 
 ## Pipeline
 TS [OK] | Tests 13/13 [OK] | Lint [OK]
